@@ -1,0 +1,125 @@
+body {
+    font-family: 'Cambria', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #4A00E0, #8E2DE2);
+    animation: backgroundAnimation 20s infinite alternate;
+    -webkit-animation: backgroundAnimation 20s infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: fadeInAnimation 1s ease-in-out;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    animation: fadeInAnimation 1.5s ease-in-out;
+}
+
+.highlight {
+    color: #ff6f61;
+}
+
+.envelope {
+    width: 200px;
+    height: 120px;
+    background-color: #f9d6c1;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    animation: fadeInAnimation 2s ease-in-out;
+    border-radius: 10px; /* bordes redondeados al sobre */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* sombra al sobre */
+}
+
+.envelope::after {
+    content: 'Ábreme, soy un sobre xd';
+    position: absolute;
+    font-size: 1.2rem;
+    color: #333;
+    bottom: 50%; /* Centra verticalmente */
+    left: 50%;
+    transform: translate(-50%, 50%); /* Centra vertical y horizontalmente */
+}
+
+
+.envelope-top,
+.envelope-bottom {
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    position: absolute;
+}
+
+.envelope-top {
+    border-bottom: 60px solid #f9d6c1;
+    top: 0;
+}
+
+.envelope-bottom {
+    border-top: 60px solid #f9d6c1;
+    bottom: 0;
+}
+
+.paper {
+    width: 80%;
+    max-width: 500px;
+    border-radius:15px;
+    background-color: #e2b3b3;
+    /*Cambiaelcolordefondo*/margin: 20px auto;
+    border: 2px solid #ccc;
+    padding: 20px;
+    display: none;
+    animation: fadeInAnimation 2.5s ease-in-out;
+    -webkit-border-radius:15px;
+    -moz-border-radius:15px;
+    -ms-border-radius:15px;
+    -o-border-radius:15px;
+}
+
+.centered-image {
+    display: block;
+    margin: 20px auto; /* Centrar horizontalmente*/
+    max-width: 400px; /*Ancho*/
+    height: auto;
+}
+
+
+.paper-text {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold; /* Agrega negrita */
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
